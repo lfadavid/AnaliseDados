@@ -3,6 +3,10 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import locale
+import os
+from datetime import datetime
+import locale
+locale.setlocale(locale.LC_ALL, "de_DE")
 
 st.set_page_config(
                     page_title="Análise de Dados",
