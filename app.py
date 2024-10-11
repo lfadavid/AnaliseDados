@@ -30,7 +30,7 @@ if uploader_file is not None:
     with st.sidebar:
         estado_destino = df["Estado Destino"].unique().tolist()
         df["Coleta"] = pd.to_datetime(df["Coleta"])
-        df["Mes"] = df["Coleta"].dt.month_name(locale="pt_BR.utf8")
+        df["Mes"] = df["Coleta"].dt.month_name(locale="pt_BR.utf-8")
         
         with open ('style.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
