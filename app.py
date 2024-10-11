@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import locale
 
 st.set_page_config(
                     page_title="Análise de Dados",
@@ -29,7 +30,7 @@ if uploader_file is not None:
     with st.sidebar:
         estado_destino = df["Estado Destino"].unique().tolist()
         df["Coleta"] = pd.to_datetime(df["Coleta"])
-        df["Mes"] = df["Coleta"].dt.month_name(locale="pt")
+        df["Mes"] = df["Coleta"].dt.month_name(locale="pt_BR.utf8")
         
         with open ('style.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
